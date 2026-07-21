@@ -18,17 +18,20 @@ export default class Renderer{
     createInstance(){
         
         this.rendererInstance =new THREE.WebGLRenderer({
+            
             antialias: true,
             canvas: this.experience.canvas
         })
+
         this.rendererInstance.setSize(this.sizes.width, this.sizes.height)
          
-         this.rendererInstance.setPixelRatio(this.sizes.pixelRatio)
+        this.rendererInstance.setPixelRatio(this.sizes.pixelRatio)
        
         
     }
 
   render() {
+
     this.rendererInstance.render(
         this.scene.scene,
         this.camera.cameraInstance
@@ -36,6 +39,7 @@ export default class Renderer{
   }
 
   resize(){
+
     this.rendererInstance.setSize(
         this.sizes.width,
         this.sizes.height
